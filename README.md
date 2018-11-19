@@ -1,9 +1,9 @@
 # Inferring_community_assembly_processes
 
-Model code, general instructions
+# Model code, general instructions
 The model presented in the main text of the Methods in Ecology and Evolution paper “Inferring community assembly processes from macroscopic patterns using dynamic eco-evolutionary models and Approximate Bayesian Computation (ABC)” is implemented in its basic form as MATLAB (version R2017b) code. In order to run the model “main_ecoevo.m” should be executed in the same directory as the m-files briefly presented below. The code is commented within each m-file, below we present general features and key components of the implementation.
 
-main_ecoevo.m
+# main_ecoevo.m
 This is the main function that is executed in order to run the model. Default model parameters and initial conditions are initiated (lines 25-69), or parameters can be assigned as input to the function (see details below). Initiation is essential for the scenario that one wants to model. Habitat variables dictate the number of habitats and their position in resource/ trait space. Competition variables initiate the number of competitor populations, their position, and abundance in the habitats, their traits, niche width, dispersal propensity, and evolvability. Similarly, predator variables dictate the number of predator populations, their position, and abundance in the habitats, their traits, niche width, dispersal propensity, and evolvability. This flexibility provide possibility to run multiple model scenarios. For example, like the scenarios presented in the case study of this paper, it is possible to reduce the general model to a model of predator only and predator-prey adaptive radiations in one habitat. This is done through modification of parameters N0 and P0, such that the system is seeded with prey only or with prey and predators in one habitat only and by setting dispersal (mN and mP) to zero. The program can be run from the MATLAB command line without any input arguments (default parameter values will used) or as a function with input arguments for: 
 
 -  Prey abundance (N0) in habitat 1,2, and 3 (first 3 input arguments)
